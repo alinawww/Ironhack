@@ -1,11 +1,19 @@
 class MilkShake
-    attr_reader :item_price, :item_name
+    attr_reader :price_of_milkshake, :ingredients
     def initialize
         @base_price = 3
         @ingredients = [ ]
     end
     def add_ingredient(ingredient)
         @ingredients.push(ingredient)
+    end
+    def name_of_milkshake
+        final_name = "Milkshake"
+        @ingredients.each do |topping|
+            final_name = "Milkshake with #{topping.name}"
+            
+        end
+        return final_name
     end
     def price_of_milkshake
         total_price_of_milkshake = @base_price
@@ -14,12 +22,7 @@ class MilkShake
         end
         return total_price_of_milkshake
     end
-    def item
-        @item_name = "Milkshake with #{ingredient}"
-        @item_price = price_of_milkshake
-    end
 end
-
 
 class Ingredient
     attr_reader :name, :price
@@ -29,7 +32,6 @@ class Ingredient
     end
 end
 
-
 class Shop
     def initialize
         @milkshakes_list = [ ]
@@ -37,12 +39,21 @@ class Shop
     def add_milkshake(item)
         @milkshakes_list.push(item)
     end
-    def checkout
-        checkout_price =
+    def list_products
         @milkshakes_list.each do |item|
-            checkout_price += item
+            total += item.price_of_milkshake
+            puts item => item.price_of_milkshake
         end
-        return checkout_price
+        return total
+    end
+    def checkout
+        total = 0
+        @milkshakes_list.each do |item|
+           total += item.price_of_milkshake
+           puts "#{item.name_of_milkshake} => #{item.price_of_milkshake}"
+        end
+        puts "-------------------------------------------"
+        return total
     end
 end
 
@@ -61,11 +72,20 @@ nizars_milkshake.add_ingredient(chocolate_chips)
 alinas_milkshake = MilkShake.new
 alinas_milkshake.add_ingredient(banana)
 
+
 marjonas_milkshake = MilkShake.new
 marjonas_milkshake.add_ingredient(chocolate_chips)
 
+marias_milkshake = MilkShake.new
+marias_milkshake.add_ingredient(berries)
+
 shoppings = Shop.new
-shoppings.add_milkshake(nizars_milkshake.price_of_milkshake)
-shoppings.add_milkshake(alinas_milkshake.price_of_milkshake)
-shoppings.add_milkshake(marjonas_milkshake.price_of_milkshake)
-puts shoppings.checkout
+shoppings.add_milkshake(nizars_milkshake)
+shoppings.add_milkshake(alinas_milkshake)
+shoppings.add_milkshake(marjonas_milkshake)
+shoppings.add_milkshake(marias_milkshake)
+puts "-------------------------------------------"
+puts "This is your order"
+puts "-------------------------------------------"
+puts "Total: #{shoppings.checkout}"
+puts "-------------------------------------------"
