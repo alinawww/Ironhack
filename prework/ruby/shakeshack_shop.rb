@@ -8,12 +8,10 @@ class MilkShake
         @ingredients.push(ingredient)
     end
     def name_of_milkshake
-        final_name = "Milkshake"
-        @ingredients.each do |topping|
-            final_name = "Milkshake with #{topping.name}"
-            
-        end
-        return final_name
+        milkshake_name = "Milkshake"
+        ingredients = @ingredients.map{|ingredient| ingredient.name}
+            milkshake_name = "Milkshake with #{ingredients.join(", ")}"
+        return milkshake_name
     end
     def price_of_milkshake
         total_price_of_milkshake = @base_price
