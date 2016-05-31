@@ -1,0 +1,208 @@
+/*! 
+ * Flow - A Fully Fluid Responsive Grid System
+ * Created by Isaac Gray
+ *
+ * Generate a grid at http://flow.gs
+ */
+ img{
+ 	max-width:100%;
+ 	display:block;
+ }
+.container{
+	max-width:1200px;
+	margin:0 auto;
+}
+.section {
+	clear: both;
+	margin: 0;
+	margin-left: -1.25em;
+}
+
+.col {
+	display: block;
+	float:left;
+	width: 100%;
+	box-sizing: border-box; /* Supported by IE 8+. If IE 7 and below support is required see http://html5please.com/#box-sizing */
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	background-clip: padding-box; /* This allows column elements to have background colour without it bleeding into the gutter. Supported by IE 9+. If support for IE 8 and below is required, a content div with background colour should be placed inside the column */
+	-moz-background-clip: padding-box;
+	-webkit-background-clip: padding-box;
+	margin: 0 0 1.25em 0;
+	border-left: 1.25em solid transparent;
+}
+
+.group:before,
+.group:after {
+	content:"";
+	display:table;
+}
+
+.group:after {
+	clear:both;
+}
+
+@media only screen and (min-width:480px) {
+
+	.col {
+		width: auto;
+	}
+
+	.s1{ width: 8.33%; }
+
+	.s2{ width: 16.66%; }
+
+	.s3{ width: 25%; }
+
+	.s4{ width: 33.33%; }
+
+	.s5{ width: 41.66%; }
+
+	.s6{ width: 50%; }
+
+	.s7{ width: 58.33%; }
+
+	.s8{ width: 66.66%; }
+
+	.s9{ width: 75%; }
+
+	.s10{ width: 83.33%; }
+
+	.s11{ width: 91.66%; }
+
+	.s12{ width: 100%; }
+}
+body{
+	font-family: open sans;
+	line-height:1.5;
+	margin:0;
+}
+
+header {
+    padding: 10px 20px 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+header .section{
+	padding:0;
+}
+header img{
+	max-width:150px;
+	width:100%;
+	display: inline-block;	
+}
+header a.title{
+	color:#fff;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight:900;
+}
+
+article{
+	max-width: 1000px;
+	margin:0 auto;
+	padding:70px 20px;
+}
+
+article.fullbleed{
+	max-width:100%;
+}
+
+article.fullbleed section{
+	max-width:1000px;
+	margin:0 auto;
+}
+article.hero{
+	padding:0px;
+}
+.hero{
+	background:url('img/hero.jpg');
+	background-size: cover;
+	background-attachment: fixed;
+	height:100vh;
+	display: flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+	color:#fff;
+}
+
+.details p{
+    background: #FFC107;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.specs{
+	background:#FFC107;
+}
+.quote1{
+	background:url('img/quote1.jpg');
+}
+.quote2{
+	background:url('img/quote2.jpg');
+}
+
+.quote{
+	background-size:cover;
+	background-attachment: fixed;
+	color:#fff;
+	text-align: center;
+}
+.quote p.quote{
+	color:#fff;
+	text-align: center;
+	font-size:40px;
+	font-family: satisfy, cursive;
+}
+.quote img {
+	margin:0 auto;
+	max-width:50px;
+}
+
+.intro{
+	max-width:80%;
+	margin:0 auto;
+	text-align: center;
+}
+nav{
+	text-align:right;
+	padding-top:30px;
+}
+
+nav a{
+	text-decoration: none;
+	color:#fff;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size:15px;
+	margin:0 10px;
+}
+
+h1{
+	font-size:70px;
+	line-height:1em;
+	margin:0 auto;
+}
+
+.hero h3{
+	font-size:40px;
+	font-weight:normal;
+}
+
+.hero a{
+	color:inherit;
+	text-decoration: none;
+}
+
+footer{
+	background:#333;
+	color:#fff;
+	text-align:center;
+	padding:30px;
+}
+footer p{
+	margin:0 auto;
+}
