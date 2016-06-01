@@ -55,7 +55,11 @@ class ShoppingCart
     def checkout
         total = 0
         @items.each do |item|
-            total += item.price_of_item
+            if @items.length > 5
+                total += item.price_of_item - 0.10 * item.price_of_item
+            else
+                total += item.price_of_item
+            end
             puts "#{item.name_of_item} => $#{item.price_of_item}"
         end
         puts "-------------------------------------------"
@@ -77,6 +81,8 @@ alina = ShoppingCart.new
 alina.add_to_cart(vacuum_cleaner)
 alina.add_to_cart(table)
 alina.add_to_cart(rice)
+alina.add_to_cart(banana)
+alina.add_to_cart(banana)
 alina.add_to_cart(banana)
 alina.shopping_time("Saturday")
 
