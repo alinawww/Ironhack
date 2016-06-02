@@ -70,7 +70,6 @@ end
 
 banana = Fruit.new("Bananas", 2)
 orange_juice = Fruit.new("Orange Juice", 10)
-banana = Fruit.new("Banana", 10)
 vacuum_cleaner = Houseware.new("Vacuum Cleaner", 150)
 oj = Item.new("Orange Juice", 10)
 rice = Item.new("Rice", 1)
