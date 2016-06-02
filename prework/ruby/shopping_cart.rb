@@ -1,4 +1,3 @@
-
 class Item
     attr_reader :price_of_item, :name_of_item
     def initialize(name_of_item, base_price)
@@ -11,10 +10,12 @@ class Item
     end
 end
 
+
 class Fruit < Item
     def price_of_item
         total_price_of_item = @base_price
-        if day_of_purchase = "Saturday" || day_of_purchase = "Sunday"
+        t = Time.now
+        if t.saturday? || t.sunday?
             total_price_of_item = @base_price - 0.1 * @base_price
         else
             total_price_of_item = @base_price
@@ -68,7 +69,7 @@ class ShoppingCart
 end
 
 banana = Fruit.new("Bananas", 2)
-#orange_juice = Fruit.new("Orange Juice", 10)
+orange_juice = Fruit.new("Orange Juice", 10)
 banana = Fruit.new("Banana", 10)
 vacuum_cleaner = Houseware.new("Vacuum Cleaner", 150)
 oj = Item.new("Orange Juice", 10)
@@ -83,11 +84,17 @@ alina.add_to_cart(table)
 alina.add_to_cart(rice)
 alina.add_to_cart(banana)
 alina.add_to_cart(banana)
-alina.add_to_cart(banana)
-alina.shopping_time("Saturday")
+alina.shopping_time(1)
 
-puts "-------------------------------------------"
-puts "This is your order"
+time = Time.new
+t = Time.now
+if t.saturday? || t.sunday?
+    puts "-------------------------------------------"
+    puts "It's weekend! You get a discount for Fruit."
+else
+    puts "-------------------------------------------"
+    puts "This is your order"
+end
 puts "-------------------------------------------"
 puts "Your total is: $#{alina.checkout}. Have a nice day!"
 puts "-------------------------------------------"
