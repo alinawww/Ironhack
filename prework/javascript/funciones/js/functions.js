@@ -15,14 +15,12 @@
 // If your code works, the last three equalities will be "true"
 
 
+
 /*
-
 function dniLetter( dni ) {
-
 	var lockup = 'TRWAGMYFPDXBNJZSQVHLCKE';
-	var letters = lockup.split("");
 	var index = parseInt(dni %23);
-	var result = letters[index];
+	var result = lockup[index];
 	if (dni<0){
 		result = 'Invalid parameter'
 	}
@@ -30,14 +28,14 @@ function dniLetter( dni ) {
 		result = 'Invalid parameter'
 	}
 		return result;
-	
 }
 
 console.log( dniLetter( 12345678 ) === 'Z');
 console.log( dniLetter( 34667892 ) === 'S');
 console.log( dniLetter( 92234488 ) === 'A');
-*/
+console.log( dniLetter( 45642472 ) === 'F');
 
+*/
 
 
 //EXERCISE 2
@@ -140,7 +138,7 @@ function calculateAverage( array )
 // Represent the frequency listing as a Javascript object. Try it with something like charFreq("abbabcbdbabdbdbabababcbcbab").
 
 
-	
+
 function charFreq( string ) {
 	var freqCounter = {};
 	for (var i=0; i<string.length; i++){
@@ -171,7 +169,6 @@ console.log( counter.d === 1 );
 console.log( counter['f'] === 1 );
 
 
-
 //BONUS EXERCISE
 //
 // Restore the comments marks (/* */) of the previous exercise
@@ -187,7 +184,7 @@ console.log( counter['f'] === 1 );
 // http://www.w3schools.com/js/default.asp
 // Use the search option in both of them to find a function.
 
-/*
+
 
 function arrayAwesomenator( array ) 
 {
@@ -204,7 +201,11 @@ function deleteRubbish( array )
 {
 	//It receives an array and returns it without '*' chars
 	//Example:  deleteRubbish(['a',1,'*',5]) returns ['a',1,5]
-	
+	for(j = 0; j<array.length; j++){
+		if (array[j] === "*"){
+			array.splice(array[j], 1)
+		}
+	}
 }
 
 function arrangeElements( array )
@@ -248,6 +249,6 @@ function arrayToString( array )
 console.log(arrayAwesomenator(["a", 6, "B", "F", "*", 8, 78, "J" ]) === "668Abfj");
 console.log(arrayAwesomenator(["*", "j", 6, "A", "F", "*", 8, "C", "b", "a", 78, "J", 43523, 1111, "r", "q", "y" ]) === "46688AAbcfjjqry");
 
-*/
+
 
 
