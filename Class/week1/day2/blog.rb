@@ -115,8 +115,5 @@ blog.add_post Post.new("First post", yesterday, "content1" )
 blog.add_post Post.new("Second post", tomorrow, "content2", true )
 blog.add_post Post.new("Third post", today, "content3" )
 blog.add_post Post.new("First post", yesterday, "content1" )
-blog.add_post Post.new("Second post", tomorrow, "content2", true )
-blog.add_post Post.new("Third post", today, "content3" )
-
 
 blog.publish_front_page
