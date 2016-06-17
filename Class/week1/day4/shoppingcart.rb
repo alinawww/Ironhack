@@ -12,32 +12,30 @@ class ShoppingCart
   def initialize
     @inventory = {}
   end
-  def quantify
-    @item_group = {}
+  def add_item_to_cart(item)
+    # @inventory.each do |item|
+      #binding.pry
+      if @inventory.key?(item.name.to_sym)
+        @inventory[item.name.to_sym][:quantity] += 1
+        @inventory[item.name.to_sym][:price] += @inventory[item.name.to_sym][:price]
+
+      else
+        @inventory[item.name.to_sym] = {:quantity => 1, :price => item.price}
+        # @inventory[item.name.to_sym][:quantity] = 1
+        # @inventory[item.name.to_sym][:price] = item.price
+      end
+    # end
   end
-  def add_item_to_group(item)
-    @item_group[item.name.to_sym] = item.price
-    if
-  end
-  def add_quantified_to_inventory(item_group)
-    @inventory[@item_group] = item_group.price
-  end
-  # def count_items
-  #   counter = 0
-  #   @inventory.each do |item|
-  #     item.name = quantity.to + item.name
-  #   end
-  # end
   def show
     @inventory.each do |key, value|
-      puts "#{key}: #{value}"
+      puts "#{value[:quantity]} #{key} #{value[:price]}"
     end
+    #binding.pry
   end
-
   def cost
     total=0
     @inventory.each do |key, value|
-        total += value
+        total += value[:price]
     end
     puts "Total: #{total}"
   end
@@ -49,14 +47,11 @@ end
 # :banana     20$
 # :watermelon 50$
 
-# my_products = {
-#   :apple => 10,
-#   :banana => 20,
-#   :orange => 4,
-# }
-#
 apple = Item.new("apple", 10)
+
 banana = Item.new("banana", 20)
+oranges = Item.new("oranges", 5)
+watermelon = Item.new("watermelon", 50)
 grapes = Item.new("grapes", 15)
 
 
@@ -71,6 +66,8 @@ cart = ShoppingCart.new
 cart.add_item_to_cart (apple)
 cart.add_item_to_cart (banana)
 cart.add_item_to_cart (banana)
+cart.add_item_to_cart (oranges)
+cart.add_item_to_cart (watermelon)
 cart.add_item_to_cart (grapes)
 
 
