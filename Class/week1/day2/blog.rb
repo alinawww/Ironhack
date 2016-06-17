@@ -1,4 +1,3 @@
-
 require 'date'
 require 'colorize'
 require 'pry'
@@ -18,7 +17,9 @@ class Blog
     end
     puts "---\nWelcome! This is the front page of my blog.\n---"
     split_posts = @posts.each_slice(3).to_a
+    counter = 1
     split_posts.map.with_index do |page, index|
+
       # binding.pry
       page.each do |post|
         if post.sponsored
@@ -37,18 +38,24 @@ class Blog
           puts " "
         end
       end
-      split_posts.each_index do |index|
-        print index + 1, " -- "
-      end
+
       puts " "
       puts "< prev next >".colorize(:color => :white, :background => :black)
+
+      split_posts.each_index do |index|
+        if index + 1 == counter
+          print (index + 1).to_s.colorize(:green), "   "
+        else
+          print index + 1, "   "
+        end
+      end
+      counter += 1
       command = gets.chomp.downcase
       if command == ">" || command == "next"
         paginated = split_posts.each
-        puts paginated.next
       elsif command == "<" || command == "prev"
         if index > 0
-          puts split_posts[index-1]
+          split_posts[index-1]
         end
       else
         puts "Sorry, I don't understand your command."
