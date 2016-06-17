@@ -37,7 +37,10 @@ class Blog
           puts " "
         end
       end
-
+      split_posts.each_index do |index|
+        print index + 1, " -- "
+      end
+      puts " "
       puts "< prev next >".colorize(:color => :white, :background => :black)
       command = gets.chomp.downcase
       if command == ">" || command == "next"
