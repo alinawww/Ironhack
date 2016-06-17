@@ -1,3 +1,4 @@
+
 require 'pry'
 
 class Item
@@ -65,6 +66,9 @@ class ShoppingCart
       end
     end
   end
+  def sunday_price(item)
+
+  end
   def show
     @inventory.each do |key, value|
       puts "#{value[:quantity]} #{key} #{value[:price]}"
@@ -86,11 +90,31 @@ end
 # :banana     20$
 # :watermelon 50$
 
-apple = Item.new("apple", 10)
-oranges = Item.new("oranges", 5)
-grapes = Item.new("grapes", 15)
-banana = Item.new("banana", 20)
-watermelon = Item.new("watermelon", 50)
+
+puts "What is the season?"
+season = gets.chomp.downcase.to_sym
+puts "What is the season? A regular day (regularday) or Sunday (sunday)?"
+day = gets.chomp.downcase.to_sym
+
+apple_seasonal_prices = {:spring => 10, :summer => 10, :autumn => 15, :winter => 12}
+oranges_seasonal_prices = {:spring => 5, :summer => 2, :autumn => 5, :winter => 5}
+grapes_seasonal_prices = {:spring => 15, :summer => 15, :autumn => 15, :winter => 15}
+banana_seasonal_prices = {:spring => 20, :summer => 20, :autumn => 20, :winter => 21}
+
+watermelon_seasonal_prices = {
+  :spring => {:regularday => 50, :sunday => 100},
+  :summer => {:regularday => 50, :sunday => 100},
+  :autumn => {:regularday => 50, :sunday => 100},
+  :winter => {:regularday => 50, :sunday => 100}
+}
+
+
+apple = Item.new("apple", apple_seasonal_prices[season])
+# binding.pry
+oranges = Item.new("oranges", oranges_seasonal_prices[season])
+grapes = Item.new("grapes", grapes_seasonal_prices[season])
+banana = Item.new("banana", banana_seasonal_prices[season])
+watermelon = Item.new("watermelon", watermelon_seasonal_prices[season][day])
 
 
 cart = ShoppingCart.new
@@ -123,7 +147,3 @@ cart.three_for_two(apple)
 cart.get_free_banana(grapes, banana)
 cart.show
 cart.cost
-# #
-# banana_deal = Deals.new(cart)
-#
-# banana_deal.two_for_one(banana)
