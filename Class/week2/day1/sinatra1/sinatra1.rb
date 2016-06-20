@@ -4,11 +4,11 @@ class Task
   T = Time.now
     attr_reader :content, :id, :completed, :created_at, :updated_at
     @@current_id = 1
-    def initialize(content, completed = false, created_at = T, updated_at = nil)
+    def initialize(content, completed = false, updated_at = nil)
         @content = content
         @id = @@current_id
         @@current_id += 1
-        @created_at = created_at
+        @created_at = Time.now
         @completed = completed
         @updated_at = updated_at
     end
