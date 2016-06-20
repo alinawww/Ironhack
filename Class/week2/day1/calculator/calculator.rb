@@ -1,0 +1,13 @@
+
+class StringCalculator
+  def add(numbers)
+    numbers.split(',').inject(0) do |sum, x|
+      sum + x.to_i
+    end
+    # binding.pry
+  end
+end
+
+mine = StringCalculator.new
+
+puts mine.add('1,2,3')
