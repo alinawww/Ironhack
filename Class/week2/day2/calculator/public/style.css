@@ -64,3 +64,13 @@ button:hover{
     padding: 30px;
     border-radius: 4px;
 }
+.fa-plus.rotate {
+    transform: rotate(45deg);
+}
+.fa-minus.rotate {
+    transform: rotate(-45deg);
+}
+
+.row.operation-buttons {
+    text-align: center;
+}
