@@ -1,5 +1,6 @@
 require 'rspec'
 require './sinatra1'
+require 'yaml/store'
 
 # creating new tasks, deleting tasks, updating tasks, completing tasks, and maybe even a few more surprises.
 describe Task do
@@ -29,7 +30,7 @@ describe Task do
 end
 
 describe TodoList do
-
+attr_accessor :subject, :mytask
   before(:each) do
     @secondtask = Task.new("this one as well")
     @mytask = Task.new("to be deleted")
@@ -75,3 +76,19 @@ describe TodoList do
     end
   end
 end
+
+describe SaveTasks do
+  describe TodoList
+    before(:each) do
+      @mytask = Task.new("to be deleted")
+      @subject = TodoList.new("user")
+      @subject.add_task(@mytask)
+      @todo_store = YAML::Store.new("tasks-test.yml")
+    end
+  end
+
+  describe "#save" do
+    mytasks = YAML.load_file("tasks-test.yml")
+    expect(mytasks.fetch('user')['content']).to eq(@mytask.content)
+  end
+  mytasks.fetch('user')['content']

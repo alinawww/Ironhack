@@ -1,0 +1,26 @@
+<html>
+<head>
+  <title>Add | Online Calculator</title>
+  <link rel="stylesheet" href="/style.css" media="screen" title="Style.css" charset="utf-8">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css" media="screen" title="Style.css" charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+</head>
+<body>
+  <h1>CALCULATE</h1>
+  <br>
+  <div class="row operation-buttons">
+    <form action="/calculate" method="POST">
+      <input type="number" id="value1" name="first_number" placeholder="e.g. 10">
+      <input type="number" id="value2" name="second_number" placeholder="e.g. 20"><br><br>
+      <div class="left">
+        <button type="submit" name="operation" value="addition"><i class="fa fa-plus"></i></button>
+        <button type="submit" name="operation" value="subtraction"><i class="fa fa-minus"></i></button>
+      </div>
+      <div class="right">
+        <button type="submit" name="operation" value="multiply"><i class="fa fa-plus rotate "></i></button>
+        <button type="submit" name="operation" value="divide"><i class="fa fa-minus rotate"></i></button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
