@@ -1,0 +1,2 @@
+require './calculator'
+run Calculator

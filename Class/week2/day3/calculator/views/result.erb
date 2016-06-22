@@ -1,0 +1,28 @@
+<html>
+<head>
+  <title>Add | Online Calculator</title>
+  <link rel="stylesheet" href="/style.css" media="screen" title="Style.css" charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+</head>
+<body>
+<h1>TAAADAAAA!!!!</h1>
+<h2 class="result"><%= @result%></h2>
+<br>
+<div class="row result-buttons">
+  <div class="left">
+    <a href="/">
+    <button type="button" name="backtohome"> Back to home</button>
+    </a>
+  </div>
+  <div class="right">
+    <form action="/save_result" method="POST">
+      <button type="submit" name="save_result" value="save">Save the result</button>
+    </form>
+  </div>
+</div>
+
+
+
+
+</body>
+</html>
