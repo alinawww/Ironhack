@@ -1,3 +1,4 @@
+require 'date'
 
 yesterday = Date.new(2016,6,13)
 today = Date.new(2016,6,14)

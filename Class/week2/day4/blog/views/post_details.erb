@@ -22,7 +22,7 @@
       By <b><%= @posts[@id].author.capitalize %></b>
     </p>
     <p>
-      <em><%= @posts[@id].date %></em>
+      <em><%= @posts[@id].date.strftime('%Y-%m-%d') %></em>
     </p>
     <a href="/"><button type="button" name="button"><i class="fa fa-home"></i>&nbsp;&nbsp;Back to home</button></a>
   </div>
