@@ -1,8 +1,6 @@
-require 'date'
 require 'colorize'
 require 'pry'
 require_relative './post.rb'
-require 'date'
 
 class Blog
   attr_reader :posts

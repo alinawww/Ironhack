@@ -9,28 +9,14 @@
 </head>
 <body>
   <div class="content">
-    <h1>This is my blog!</h1>
-    <br>
-      <div class="all_posts">
-        <% @posts.each_with_index do |post, index| %>
-        <a href="/post_details/<%=index%>">
-          <div class="my_post">
-          <h3><%= post.title %></h3>
-          <p>
-          <p>
-            <em><%= post.date %></em>
-          </p>
-          </div>
-          </a>
-        <%end%>
-      </div>
-
-<br>
-
-    <form class="create_post" action="create_post" method="post">
-      <button type="submit" name="button"><i class="fa fa-plus"></i>&nbsp;Create new post</button>
+    <h1>Let's create a new blog post!</h1>
+    <form class="create_new_post" action="add_new_post" method="post">
+      <input type="text" name="name" placeholder="post title"><br>
+      <input type="text" name="category" placeholder="category"><br>
+      <input type="text" name="author" placeholder="author name"><br>
+      <textarea name="content" rows="4" cols="50" placeholder="write here your amazing story"></textarea><br><br>
+      <button type="submit" name="submit_new_post">Submit</button>
     </form>
   </div>
-
 </body>
 </html>

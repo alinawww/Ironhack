@@ -11,25 +11,20 @@
   <div class="content">
     <h1>This is my blog!</h1>
     <br>
-      <div class="all_posts">
-        <% @posts.each_with_index do |post, index| %>
-        <a href="/post_details/<%=index%>">
-          <div class="my_post">
-          <h3><%= post.title %></h3>
-          <p>
-          <p>
-            <em><%= post.date %></em>
-          </p>
-          </div>
-          </a>
-        <%end%>
-      </div>
-
-<br>
-
-    <form class="create_post" action="create_post" method="post">
-      <button type="submit" name="button"><i class="fa fa-plus"></i>&nbsp;Create new post</button>
-    </form>
+    <h3><a href=""><%= @posts[@id].title %></a></h3>
+    <p>
+    <%= @posts[@id].text %>
+    </p>
+    <p>
+      Category: <%= @posts[@id].category %>
+    </p>
+    <p>
+      By <b><%= @posts[@id].author.capitalize %></b>
+    </p>
+    <p>
+      <em><%= @posts[@id].date %></em>
+    </p>
+    <a href="/"><button type="button" name="button"><i class="fa fa-home"></i>&nbsp;&nbsp;Back to home</button></a>
   </div>
 
 </body>
