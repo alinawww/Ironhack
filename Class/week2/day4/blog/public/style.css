@@ -1,0 +1,80 @@
+body{
+background: #B24592; /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #B24592 , #F15F79); /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #B24592 , #F15F79); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+font-family: 'Montserrat', sans-serif;
+}
+
+.content {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 100px;
+    background: #fff;
+    box-shadow: 10px 10px 57px rgba(0, 0, 0, 0.49);
+}
+h1{
+  /*color:#fff;*/
+  font-size:2em;
+}
+
+input {
+    box-shadow: none;
+    border: 0;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.82);
+    border-radius: 4px;
+    font-size: 2em;
+    overflow: scroll;
+}
+
+h2.result{
+  color:#fff;
+  font-size:5em;
+}
+.left{
+  float:left;
+}
+.right{
+  float:right;
+}
+
+.result-buttons button {
+    padding: 20px 40px;
+    border: 0;
+    background: #111;
+    margin: 0px 3px;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 200;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition:all 200ms ease-in-out
+
+}
+button:hover{
+  cursor: pointer;
+  opacity:.8;
+  transition:all 200ms ease-in-out
+}
+
+
+.operation-buttons button {
+    border: 0;
+    background: #111;
+    color: #fff;
+    font-size: 60px;
+    padding: 30px;
+    border-radius: 4px;
+}
+.fa-plus.rotate {
+    transform: rotate(45deg);
+}
+.fa-minus.rotate {
+    transform: rotate(-45deg);
+}
+
+.row.operation-buttons {
+    text-align: center;
+}
