@@ -1,0 +1,195 @@
+@import "variables.less";
+@import "mixins.less";
+
+// Global Components
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    .sans-serif-font;
+    background: url('https://source.unsplash.com/random');
+    background-size:cover;
+    background-attachment: fixed;
+}
+img{
+  max-width:100%;
+}
+hr {
+    border-color: @theme-primary;
+    border-width: 3px;
+    max-width: 50px;
+}
+
+hr.light {
+    border-color: white;
+}
+
+a {
+    .transition-all;
+    color: @blue;
+    &:hover,
+    &:focus {
+        color: darken(@theme-primary, 10%);
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    .sans-serif-font;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.flex{
+  display:flex;
+}
+
+.alert{
+  color: @red;
+}
+.bg-primary {
+    background-color: @theme-primary;
+}
+
+.bg-dark {
+    background-color: @theme-dark;
+    color: white;
+}
+
+.panel{
+  width:48%;
+  padding:20px;
+  background:@smoke;
+  float:left;
+  margin:10px;
+  @media(max-width:1200px){
+    width:47%;
+  }
+  @media(max-width:697px){
+    width:100%;
+    margin: 10px auto;
+  }
+  .panel-header{
+    padding:0 0 20px 0;
+    p{
+      margin:0;
+      text-align: left;
+    }
+    .middle{
+      align-items: flex-start;
+    }
+    .col-sm-2{
+      padding-right:0;
+    }
+  }
+
+  &.panel-parent{
+    .panel-body{
+      padding:0;
+    }
+  }
+
+  .panel-inner{
+    background:@white;
+    border-radius: 5px;
+    .panel-header{
+      padding: 20px;
+      border-bottom: 1px solid #ddd;
+        p{
+          margin:0;
+        }
+      }
+      .panel-body{
+        padding:20px;
+      }
+      .panel-footer{
+        .middle{
+          align-items: flex-start;
+        }
+        .col-sm-2{
+          padding-right:0;
+        }
+      }
+    }
+  button{
+    border-radius: 20px;
+    background: transparent;
+    border: 1px solid @blue;
+    padding: 10px 30px;
+  }
+  .user-photo{
+    max-width:80%;
+  }
+}
+.round{
+  border-radius:50%;
+}
+span.tag {
+    padding: 2px 4px;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    margin:0 5px;
+}
+
+.counter{
+  color:@yellow;
+  i{
+    color:@white;
+    background:@yellow;
+    padding:5px;
+    display: inline-block;
+    border-radius:50%;
+    width:20px;
+    height:20px;
+    line-height:10px
+  }
+}
+
+.task{
+  margin:20px 0;
+  font-size:20px;
+}
+.middle {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.comments-container{
+  i{
+    font-size: 25px;
+  }
+  .comment{
+    .col-sm-2{
+      padding-right:0
+    }
+    img{
+      margin-bottom:20px;
+    }
+  }
+  .user-name{
+    margin-bottom:0;
+  }
+  .user-photo{
+    margin-top:5px;
+  }
+}
+
+.love{
+  color:@red;
+}
+.info{
+  color:@blue;
+}
