@@ -1,0 +1,9 @@
+body{
+  background:url(img/hero.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.logo img{
+  max-width:200px;
+}
