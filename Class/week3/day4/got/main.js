@@ -46,8 +46,8 @@ function fileActions(err, file){
     var episodes = JSON.parse(file);
     episodes = orderEpisodes(episodes);
     // episodes = filterEpisodes(episodes);
-    var find = searchFor(episodes, "Jon Snow");
-    if(find != undefined){
+    var found = searchFor(episodes, "Jon Snow");
+    if(found != undefined){
       console.log('I found Jon Snow in episode '+ find.episode_number);
     }else{
       console.log("Jon Snow is dead!!")
