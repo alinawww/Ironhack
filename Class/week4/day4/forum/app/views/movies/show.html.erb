@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-4">
+    <img src=<%=@my_movie.poster%> alt="">
+  </div>
+  <div class="col-8">
+    <%= @my_movie.title%> -<%= @my_movie.year%>
+    <p>*****</p>
+    <%= @my_movie.synopsis%>
+  </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <h2>Join the discussion</h2>
+      <%@comments.each do |comment|%>
+      <%= comment.comment_text%>
+      ***
+      <%= comment.username%>
+      <br>
+      <%end%>
+      <br><br>
+      <hr>
+      <br>
+      <%= form_for [@my_movie, @my_comment] do |f|%>
+      <%= f.hidden_field :username, value: session[:current_user_id]%>
+      <%= f.label :username%>
+      <br>
+      <%= f.text_field :username%>
+      <br>
+      <%= f.label :comment_text%>
+      <br>
+      <%= f. text_area :comment_text%>
+      <br>
+      <%= f.button "Add a comment"%>
+      <%end %>
+    </div>
+  </div>

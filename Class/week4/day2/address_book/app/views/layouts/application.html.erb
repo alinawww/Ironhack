@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AddressBook</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-6">  <form action="/search" method="GET">
+              <input type="text" name="search_term" placeholder="Search..">
+              <input type="hidden" name="authenticity_token"
+                value="<%= form_authenticity_token %>">
+              <button type="submit">Search</button>
+          </form></div>
+        <div class="col-6"><nav>
+          <a href="/">Home</a>
+          <a href="/favorites">Favorites</a>
+        </nav></div>
+      </div>
+
+
+      <%= yield %>
+    </div>
+  </body>
+</html>

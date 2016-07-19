@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-12">
+    <ul>
+      <% @products.each do |product|%>
+        <li>
+          <b><%= product.title%></b> -
+          <%= product.description%>
+          <%= product.bid_dl%>
+          <a href="">Show details</a>
+        </li>
+      <% end%>
+    </ul>
+
+  </div>
+</div>

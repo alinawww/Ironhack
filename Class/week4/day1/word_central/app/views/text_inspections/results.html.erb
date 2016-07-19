@@ -1,0 +1,14 @@
+<p>Reading time <%= @reading_time%> seconds</p>
+
+<p>The text is <%= @word_count%> words long.</p>
+
+<p>Your text:</p>
+<p><%= @text%></p>
+
+<p>Most frequent words used are</p>
+<%= @most_frequent%>
+
+<br>
+<!-- could I make this a relative link? -->
+<%= link_to "home", home_path%>
+<a href="/">Back home</a>

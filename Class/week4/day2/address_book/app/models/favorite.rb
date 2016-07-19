@@ -1,0 +1,2 @@
+class Favorite < Contact
+end

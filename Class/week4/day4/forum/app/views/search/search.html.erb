@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="col-12">
+    <%= form_tag('/search')  do |f|%>
+    <%= label_tag 'search_term'%>
+    <br>
+    <%= text_field_tag 'search_term'%>
+    <br>
+    <%= button_tag "Search"%>
+    <%end %>
+  </div>
+</div>

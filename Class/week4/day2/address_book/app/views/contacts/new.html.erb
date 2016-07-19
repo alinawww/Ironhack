@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-12">
+  <h1>Create a new contact</h1>
+  <form action="/contacts" method="POST">
+    <div>
+      <label for="contact_name">Name</label>
+      <input type="text" name="contact[name]" id="contact_name" required>
+    </div>
+
+    <div>
+      <label for="contact_address">Address</label>
+      <textarea name="contact[address]" id="contact_address"></textarea>
+    </div>
+
+    <div>
+      <label for="contact_phone">Phone number</label>
+      <input type="tel" name="contact[phone]" id="contact_phone" pattern="[\+]\d{2}[\(]\d{2}[\)]\d{4}[\-]\d{4}" placeholder="+99(99)9999-9999">
+    </div>
+
+    <div>
+      <label for="contact_email">Email</label>
+      <input type="email" name="contact[email]" id="contact_email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
+    </div>
+    <input type="checkbox" name="contact[status]" value="favorite">Create and make favorite<br>
+    <input type="hidden" name="authenticity_token"
+      value="<%= form_authenticity_token %>">
+    <button type="submit">Submit</button>
+  </form>
+  </div>
+</div>

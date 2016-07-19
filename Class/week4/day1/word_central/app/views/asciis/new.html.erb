@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row flex-row">
+    <div class="col-12 middle">
+      <h1>ASCII ME!</h1>
+      <br>
+      <form action="/asciis" method="post">
+          <label for="asciis_user_text">Your text down here:</label><br>
+          <textarea name="asciis[user_text]" id="asciis_user_text"></textarea>
+          <input type="hidden" name="authenticity_token"
+            value="<%= form_authenticity_token %>">
+        <button type="submit">Submit text</button>
+      </form>
+    </div>
+  </div>
+</div>

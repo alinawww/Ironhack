@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row flex-row">
+    <div class="col-12 middle">
+      <h1>Gimme some!</h1>
+      <form action="/placeholder" method="post">
+      <div class="col-8">
+        <label for="place_type">What do you need?</label><br>
+        <div class="row">
+          <div class="col-6"><input type="radio" name="place_type" value="words">Words</div>
+          <div class="col-6"><input type="radio" name="place_type" value="paragraphs">Paragraph</div>
+        </div>
+      </div>
+      <div class="col-4">
+        <label for="place_user_number">How many?</label><br>
+        <input type="number" name="place[user_number]" id="place_user_number">
+      </div>
+      <input type="hidden" name="authenticity_token"
+        value="<%= form_authenticity_token %>">
+        <button type="submit">Submit text</button>
+      </form>
+    </div>
+  </div>
+
+  </div>

@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-12">
+      <% @favorites.each do |favorite| %>
+      <a href="/details/<%= favorite.id %>">
+        <%= favorite.name %>
+      </a>
+      <br>
+      <%end%>
+      
+      <!-- <a href="new">Create</a> -->
+  </div>
+</div>

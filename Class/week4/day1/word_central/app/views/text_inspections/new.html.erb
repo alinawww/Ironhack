@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row flex-row">
+    <div class="col-12 middle">
+      <h1>Word Central</h1>
+      <h2>Submit text for inspection</h2>
+      <form action="/text_inspections" method="post">
+        <label for="text_inspection_user_text">Text</label>
+        <textarea name="text_inspection[user_text]" id="text_inspection_user_text" placeholder="your text here"></textarea>
+        <input type="hidden" name="authenticity_token"
+          value="<%= form_authenticity_token %>">
+        <button type="submit">Submit text</button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<% @found_movies.each do |movie|%>
+  <div class="row">
+    <div class="col-4">
+      <img src=<%=movie.poster%> alt="">
+    </div>
+    <div class="col-8">
+      <%= movie.title%> -<%= movie.year%>
+      <p>*****</p>
+      <%= movie.synopsis%>
+      <br>
+      <%= link_to "Start discussion", movie_path(movie.id), class: "" %>
+    </div>
+  </div>
+<%end%>

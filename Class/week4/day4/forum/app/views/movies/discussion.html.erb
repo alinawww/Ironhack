@@ -1,0 +1,9 @@
+<div class="row">
+  <div class="col-12">
+    <%= @my_movie.title%> -<%= @my_movie.year%>
+    <%@comments.each do |comment|%>
+      <%= comment.comment_text%>
+      <%= comment.username%>
+    <%end%>
+  </div>
+</div>
